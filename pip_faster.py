@@ -334,6 +334,9 @@ def trace_requirements(requirements):
                 dist, timid_relpath(dist.location), req
             ))
 
+        if not dist:
+            continue
+
         assert dist is not None, 'Should be unreachable in pip8+'
         result.append(dist_to_req(dist))
 
